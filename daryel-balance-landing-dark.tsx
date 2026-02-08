@@ -18,7 +18,9 @@ const StickyHeader = () => {
     '🎯 Moldea tu figura ideal',
     '💪 Sin dolor ni recuperación',
     '✅ Tratamiento personalizado',
-    '🌟 Profesionales certificados'
+    '🌟 Profesionales certificados',
+    '$1,199',
+    '$899 3 sesiones + 1 GRATIS'
   ];
 
   // Duplicate phrases for seamless infinite scroll
@@ -58,10 +60,32 @@ const StickyHeader = () => {
             ];
             const gradientClass = gradients[index % gradients.length];
 
+            if (phrase === '$1,199') {
+              return (
+                <span
+                  key={index}
+                  className="text-sm md:text-base font-bold text-red-500 line-through px-4 ml-2"
+                >
+                  {phrase}
+                </span>
+              );
+            }
+
+            if (phrase.includes('$899')) {
+              return (
+                <span
+                  key={index}
+                  className="text-sm md:text-base font-bold text-white px-4 ml-2"
+                >
+                  <span className="text-emerald-500">$899</span> 3 sesiones + 1 GRATIS
+                </span>
+              );
+            }
+
             return (
               <span
                 key={index}
-                className={`text-sm md:text-base font-bold bg-gradient-to-r ${gradientClass} bg-clip-text text-transparent px-4`}
+                className={`text-sm md:text-base font-bold bg-gradient-to-r ${gradientClass} bg-clip-text text-transparent px-4 ml-2`}
               >
                 {phrase}
               </span>
