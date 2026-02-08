@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -22,8 +23,49 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Meta Pixel Code */}
+        <Script id="facebook-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '2937836766406726');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+
+        {/* Global Button Tracking */}
+        <Script id="button-tracking" strategy="afterInteractive">
+          {`
+            document.addEventListener('click', function(event) {
+              const target = event.target.closest('button, a');
+              if (target) {
+                const text = target.innerText.trim() || target.getAttribute('aria-label') || 'unnamed-element';
+                fbq('trackCustom', 'ClickReductivoWhatsapp', {
+                  button_text: text,
+                  button_id: target.id,
+                  button_class: target.className,
+                  href: target.tagName === 'A' ? target.href : undefined
+                });
+              }
+            }, true);
+          `}
+        </Script>
       </head>
-      <body>{children}</body>
+      <body>
+        <noscript>
+          <img height="1" width="1" style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=2937836766406726&ev=PageView&noscript=1"
+          />
+        </noscript>
+        {children}
+      </body>
     </html>
   );
 }
