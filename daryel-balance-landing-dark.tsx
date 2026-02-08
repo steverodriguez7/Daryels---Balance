@@ -20,7 +20,7 @@ const StickyHeader = () => {
     '✅ Tratamiento personalizado',
     '🌟 Profesionales certificados',
     '$1,199',
-    '$899 3 sesiones + 1 GRATIS'
+    '$999 3 sesiones + 1 GRATIS'
   ];
 
   // Duplicate phrases for seamless infinite scroll
@@ -71,13 +71,13 @@ const StickyHeader = () => {
               );
             }
 
-            if (phrase.includes('$899')) {
+            if (phrase.includes('$999')) {
               return (
                 <span
                   key={index}
                   className="text-sm md:text-base font-bold text-white px-4 ml-2"
                 >
-                  <span className="text-emerald-500">$899</span> 3 sesiones + 1 GRATIS
+                  <span className="text-emerald-500">$999</span> 3 sesiones + 1 GRATIS
                 </span>
               );
             }
@@ -412,7 +412,7 @@ const HeroSection = () => {
             transition={{ delay: 1.1, type: "spring" }}
           >
             <a
-              href="https://wa.me/+525637534115"
+              href="https://wa.me/5215637534115?text=Me%20interesa%20una%20cita%20para%20el%20reductivo%203%20sesiones%20en%20%24999%20%2B%201%20GRATIS"
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).fbq) {
                   (window as any).fbq('trackCustom', 'ClickReductivoWhatsapp');
@@ -812,7 +812,7 @@ const SolutionSection = () => {
                 Todo personalizado. <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Nada genérico.</span>
               </p>
               <a
-                href="https://wa.me/+525637534115"
+                href="https://wa.me/5215637534115?text=Me%20interesa%20una%20cita%20para%20el%20reductivo%203%20sesiones%20en%20%24999%20%2B%201%20GRATIS"
                 onClick={() => {
                   if (typeof window !== 'undefined' && (window as any).fbq) {
                     (window as any).fbq('trackCustom', 'ClickReductivoWhatsapp');
@@ -905,7 +905,7 @@ const PromoSection = () => {
                     transition={{ duration: 1.5, repeat: Infinity }}
                     className="text-5xl md:text-7xl font-black bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent"
                   >
-                    $899
+                    $999
                   </motion.span>
                   <span className="text-4xl">💰</span>
                 </div>
@@ -950,7 +950,7 @@ const PromoSection = () => {
               whileTap={{ scale: 0.98 }}
             >
               <a
-                href="https://wa.me/+525637534115"
+                href="https://wa.me/5215637534115?text=Me%20interesa%20una%20cita%20para%20el%20reductivo%203%20sesiones%20en%20%24999%20%2B%201%20GRATIS"
                 onClick={() => {
                   if (typeof window !== 'undefined' && (window as any).fbq) {
                     (window as any).fbq('trackCustom', 'ClickReductivoWhatsapp');
