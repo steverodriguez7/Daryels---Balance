@@ -413,6 +413,11 @@ const HeroSection = () => {
           >
             <a
               href="https://wa.me/+525637534115"
+              onClick={() => {
+                if (typeof window !== 'undefined' && (window as any).fbq) {
+                  (window as any).fbq('trackCustom', 'ClickReductivoWhatsapp');
+                }
+              }}
               className="group relative inline-flex items-center gap-3 px-10 py-5 rounded-full text-xl md:text-2xl font-bold overflow-hidden transition-all hover:scale-105"
             >
               {/* Animated gradient background */}
@@ -808,6 +813,11 @@ const SolutionSection = () => {
               </p>
               <a
                 href="https://wa.me/+525637534115"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).fbq) {
+                    (window as any).fbq('trackCustom', 'ClickReductivoWhatsapp');
+                  }
+                }}
                 className="group relative inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-6 rounded-full text-lg md:text-2xl font-bold overflow-hidden transition-all hover:scale-105"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 transition-all" />
@@ -941,6 +951,11 @@ const PromoSection = () => {
             >
               <a
                 href="https://wa.me/+525637534115"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).fbq) {
+                    (window as any).fbq('trackCustom', 'ClickReductivoWhatsapp');
+                  }
+                }}
                 className="group relative block w-full bg-transparent text-center px-10 py-6 rounded-full text-2xl font-bold overflow-hidden transition-all hover:scale-105 shadow-2xl shadow-emerald-500/30"
               >
                 {/* Animated gradient background */}

@@ -39,24 +39,6 @@ export default function RootLayout({
             fbq('track', 'PageView');
           `}
         </Script>
-
-        {/* Global Button Tracking */}
-        <Script id="button-tracking" strategy="afterInteractive">
-          {`
-            document.addEventListener('click', function(event) {
-              const target = event.target.closest('button, a');
-              if (target) {
-                const text = target.innerText.trim() || target.getAttribute('aria-label') || 'unnamed-element';
-                fbq('trackCustom', 'ClickReductivoWhatsapp', {
-                  button_text: text,
-                  button_id: target.id,
-                  button_class: target.className,
-                  href: target.tagName === 'A' ? target.href : undefined
-                });
-              }
-            }, true);
-          `}
-        </Script>
       </head>
       <body>
         <noscript>
